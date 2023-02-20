@@ -13,38 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-
-//         // recupero array fumetti
-//         $fumetti = config('comics.fumetti');
-//         // recupero array icone
-//         $icone = config('comics.icone');
-//         // recupero array social
-//         $social = config('comics.social');
-        
-//     return view('Home', compact('fumetti','icone','social'));
-// })->name('Home');
-
-
-// Route::get('/home/{id}', function ($id) {
-
-//     // recupero array fumetti
-//     $fumetti = config('comics.fumetti');
-//     // recupero array icone
-//     $icone = config('comics.icone');
-//     // recupero array social
-//     $social = config('comics.social');
-
-//     // prendo un elemento singolo dell'array fumetti
-//     $single = $fumetti[$id];
-    
-// return view('card', compact('single','icone','social'));
-// })->name('card');
-
 // ROUTE CON CONTROLLER
 
 //Route della pagina principale
 Route::get('/', [ComicsController::class, 'index'])->name('home');
 
 //Route della seconda pagina con il comic in dettaglio
-Route::get('/card/{slug}', [ComicController::class, 'index'])->name('card');
+Route::get('/card/{slug}', [ComicsController::class, 'index'])->name('card');
